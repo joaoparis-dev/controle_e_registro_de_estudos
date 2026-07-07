@@ -1,0 +1,1 @@
+esse diario mostra minha jornada de aprendizado apartir do dia 06/07/26
