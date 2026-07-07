@@ -1,0 +1,5 @@
+primeiro dia de estudo, nesse dia configurei o git e github
+iniciei o repositorio e decidi fazer todos os processos de versionamento dele pelo gitbash com comandos
+eu decidi fazer isso ja que é assim que os desenvolvedores normalmente usam git diariamente
+
+tambem nesse dia montei a estrutura de pastas dese repositorio para mantelo organizado

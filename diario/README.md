@@ -1,0 +1,1 @@
+aqui ficaram os dias em que estudei e oq fiz em  cada dia
