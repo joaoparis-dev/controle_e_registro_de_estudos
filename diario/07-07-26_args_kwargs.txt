@@ -1,0 +1,2 @@
+no dia de hoje eu pesquisei sobre args e kwargs e apliquei tudo em exemplos guardados na pasta python do repositorio
+alem de escrever comentarios explicando suas funções
