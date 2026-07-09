@@ -1,0 +1,16 @@
+tempo 2 horas
+
+estudei
+
+-generators 
+-decorators
+
+aprendi: 
+principais funçoes de cada um e como usar de forma pratica
+
+dificuldade:
+nenhuma
+
+proximo passo:
+
+iterators
