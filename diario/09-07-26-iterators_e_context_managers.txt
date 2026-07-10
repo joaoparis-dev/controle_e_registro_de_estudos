@@ -1,0 +1,21 @@
+tempo: 3 horas
+
+estudei:
+
+- iterators
+- context managers
+
+aprendi:
+
+- como criar um iterator implementando os métodos __iter__() e __next__()
+- como o laço for funciona internamente utilizando iter() e next()
+- como criar um context manager utilizando os métodos __enter__() e __exit__()
+- como implementar um context manager utilizando @contextmanager e yield
+
+dificuldade:
+
+nenhuma
+
+próximo passo:
+
+dataclasses
