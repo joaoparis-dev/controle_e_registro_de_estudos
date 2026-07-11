@@ -1,0 +1,18 @@
+Tempo: 1 horas
+
+Estudei:
+
+-dataclasses
+
+Aprendi:
+
+-Como utilizar `@dataclass` para criar classes focadas no armazenamento de dados, reduzindo código repetitivo ao gerar automaticamente
+ métodos como `__init__`, `__repr__` e `__eq__`.
+
+Dificuldade:
+
+Nenhuma.
+
+Próximo passo:
+
+type hints
