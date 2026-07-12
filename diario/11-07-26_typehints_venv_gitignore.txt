@@ -1,0 +1,23 @@
+tempo: 1 horas
+
+estudei:
+
+-Type Hints
+-Virtual Environments (venv)
+-.gitignore
+
+aprendi:
+
+-Como utilizar Type Hints para deixar o código mais legível e facilitar a identificação de erros pela IDE.
+-Como criar, ativar e desativar um ambiente virtual (venv) para isolar as dependências de um projeto.
+-Como instalar bibliotecas dentro do ambiente virtual e entender que elas ficam disponíveis apenas para aquele projeto.
+-Como funciona o arquivo .gitignore, como criar um na raiz do projeto e utilizá-lo para impedir que arquivos e pastas, como o venv, sejam rastreados pelo Git.
+-A diferença entre arquivos ignorados e arquivos que já estão sendo rastreados pelo Git.
+
+dificuldade:
+
+Nenhuma.
+
+próximo passo:
+
+modules e packages
