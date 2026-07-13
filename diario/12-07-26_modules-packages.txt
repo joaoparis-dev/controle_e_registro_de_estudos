@@ -1,0 +1,19 @@
+Tempo: 1 horas
+
+Estudei:
+
+-módulos
+-pacotes
+
+Aprendi:
+
+-Como organizar projetos Python utilizando módulos e pacotes, diferentes formas de importação (`import`, `from`, `as`),
+ a função do arquivo `__init__.py` e a importância da modularização para criar códigos mais organizados, reutilizáveis e fáceis de manter.
+
+Dificuldade:
+
+Nenhuma.
+
+Próximo passo:
+
+Git e GitHub avançados.
