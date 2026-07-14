@@ -1,0 +1,7 @@
+# Branches
+
+Branches são uma forma paralela de desenvolver e versionar o código.
+
+Elas permitem criar uma linha de desenvolvimento separada, mantendo a branch principal intacta enquanto você implementa e testa novas alterações.
+
+Depois que as mudanças estiverem prontas, elas podem ser unidas à branch principal, trazendo uma atualização para o repositório.

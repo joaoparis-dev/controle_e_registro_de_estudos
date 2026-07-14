@@ -1,0 +1,19 @@
+tempo: 1 hora
+
+estudei:
+
+-Branches
+
+aprendi:
+
+-O que são branches, para que servem e como utilizá-las na prática. Aprendi a criar, trocar, listar, renomear e excluir branches
+além de entender que cada branch representa uma linha de desenvolvimento separada
+permitindo trabalhar em novas funcionalidades sem alterar a branch principal.
+
+dificuldade:
+
+Nenhuma.
+
+próximo passo:
+
+Merge
