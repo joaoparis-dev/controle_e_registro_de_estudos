@@ -1,0 +1,27 @@
+tempo: 2 horas
+
+estudei:
+
+- Merge
+- Fast-Forward Merge
+- Merge Commit
+- Conflitos de Merge
+- git merge
+- git diff
+- git merge --abort
+- git commit --amend
+- git push --force-with-lease
+
+aprendi:
+
+-como unir branches utilizando merge, a diferença entre Fast-Forward e Merge Commit, como visualizar o histórico em formato de árvore
+como editar a mensagem do último commit, como criar um conflito de merge propositalmente e como resolvê-lo 
+manualmente removendo os marcadores de conflito e finalizando o merge.
+
+dificuldade:
+
+Nenhuma
+
+próximo passo:
+
+Git Rebase.

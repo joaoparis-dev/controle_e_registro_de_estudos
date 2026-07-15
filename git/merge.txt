@@ -1,0 +1,210 @@
+# Merge no Git
+
+## O que é?
+
+Merge é o processo de unir o histórico de uma branch com outra, trazendo todas as alterações para uma única branch.
+
+Na maioria dos casos, a branch que recebe as alterações é a `main`.
+
+---
+
+## Comando básico
+
+```bash
+# Ir para a branch que receberá as alterações
+git switch main
+
+# Unir outra branch à atual
+git merge nome-da-branch
+```
+
+---
+
+## Visualizar o histórico
+
+```bash
+git log --oneline --graph --all
+```
+
+Exemplo:
+
+```text
+*   8f3d2ab Merge branch 'segunda_branch'
+|\
+| * 3ab2d91 Novo recurso
+| * 5fd8c11 Outro commit
+* | c91aa12 Alteração na main
+|/
+* 8a91d20 Commit inicial
+```
+
+---
+
+## Comparar duas branches
+
+```bash
+git diff main nome-da-branch
+```
+
+---
+
+## Cancelar um merge com conflitos
+
+Se o merge gerar conflitos e você quiser cancelar:
+
+```bash
+git merge --abort
+```
+
+---
+
+# Tipos de Merge
+
+## Fast-Forward Merge
+
+Ocorre quando a branch de destino não recebeu novos commits desde que a outra branch foi criada.
+
+Nesse caso, o Git apenas move o ponteiro da branch, sem criar um novo commit de merge.
+
+Exemplo:
+
+```text
+A --- B (main)
+         \
+          C --- D (feature)
+```
+
+Após o merge:
+
+```text
+A --- B --- C --- D (main)
+```
+
+---
+
+## Merge Commit
+
+Ocorre quando as duas branches receberam novos commits.
+
+Nesse caso, o Git cria um commit especial para unir os dois históricos.
+
+Exemplo:
+
+```text
+        C (main)
+       /
+A --- B
+       \
+        D --- E (feature)
+
+             ↓ merge
+
+        C -------- M
+       /          /
+A --- B ---------/
+       \
+        D --- E
+```
+
+O commit `M` representa o Merge Commit.
+
+---
+
+# Conflitos de Merge
+
+Um conflito acontece quando duas branches alteram a mesma parte de um arquivo e o Git não consegue decidir automaticamente qual alteração deve permanecer.
+
+Ao tentar o merge, o Git exibe uma mensagem semelhante a:
+
+```text
+CONFLICT (content): Merge conflict in arquivo.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+O arquivo ficará assim:
+
+```text
+<<<<<<< HEAD
+Texto da branch atual
+=======
+Texto da outra branch
+>>>>>>> nome-da-branch
+```
+
+Onde:
+
+- `HEAD` → conteúdo da branch atual.
+- `=======` → separa as duas versões.
+- `nome-da-branch` → conteúdo da branch que está sendo unida.
+
+---
+
+## Como resolver um conflito
+
+1. Abrir o arquivo com conflito.
+2. Escolher qual conteúdo deve permanecer (ou combinar os dois).
+3. Remover os marcadores:
+   - `<<<<<<< HEAD`
+   - `=======`
+   - `>>>>>>> nome-da-branch`
+4. Salvar o arquivo.
+5. Executar:
+
+```bash
+git add .
+git commit -m "resolve conflito de merge"
+```
+
+---
+
+## Recursos do VS Code
+
+Durante um conflito, o VS Code oferece botões para facilitar a resolução:
+
+- Aceitar Alteração Atual
+- Aceitar Alteração de Entrada
+- Aceitar Ambas Alterações
+- Comparar Alterações
+
+Esses botões apenas editam o arquivo automaticamente. No final, o arquivo deve ficar sem os marcadores de conflito.
+
+---
+
+# Alterar a mensagem do último commit
+
+Caso seja necessário alterar a mensagem do commit mais recente:
+
+```bash
+git commit --amend
+```
+
+Após editar a mensagem:
+
+- Pressione `Esc`
+- Digite:
+
+```vim
+:wq
+```
+
+- Pressione `Enter`
+
+Se o commit já tiver sido enviado ao GitHub:
+
+```bash
+git push --force-with-lease
+```
+
+---
+
+# Resumo
+
+- `git merge <branch>` une duas branches.
+- Fast-Forward apenas move o ponteiro da branch.
+- Merge Commit cria um commit especial para unir dois históricos.
+- Conflitos acontecem quando duas branches alteram a mesma parte de um arquivo.
+- Conflitos são resolvidos editando manualmente o arquivo.
+- Após resolver um conflito é necessário executar `git add` e `git commit`.
+- `git merge --abort` cancela um merge com conflitos.
+- `git commit --amend` altera a mensagem do último commit.
+- Se o commit já estiver no GitHub, utilize `git push --force-with-lease`.
