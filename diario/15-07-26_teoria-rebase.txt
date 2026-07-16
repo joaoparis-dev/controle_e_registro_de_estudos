@@ -1,0 +1,21 @@
+tempo: 1 hora
+
+estudei:
+
+- Git Rebase (teoria)
+
+aprendi:
+
+- o que é o rebase e como ele funciona;
+- diferença entre merge e rebase;
+- como o Git reaplica commits sobre uma nova base;
+- principais comandos do rebase (rebase, --continue, --abort e --skip);
+- conceito de rebase interativo e suas principais funcionalidades.
+
+dificuldade:
+
+- compreender na prática como o histórico é reescrito, devido ao repositório de testes já possuir vários merges.
+
+próximo passo:
+
+- realizar exercícios práticos de rebase e rebase interativo (reordenar, editar, remover e juntar commits).

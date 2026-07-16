@@ -1,0 +1,34 @@
+# REBASE
+
+- Rebase move uma sequência de commits para outra base.
+- Reescreve o histórico criando novos commits com novos hashes.
+- Mantém o histórico linear, sem criar commit de merge.
+- É muito utilizado para atualizar uma branch com a main antes de integrá-la.
+
+Comandos principais:
+
+git rebase main
+- Reaplica os commits da branch atual sobre a main.
+
+git rebase --continue
+- Continua o rebase após resolver conflitos.
+
+git rebase --abort
+- Cancela o rebase e retorna ao estado anterior.
+
+git rebase --skip
+- Ignora o commit atual durante o rebase.
+
+git rebase -i HEAD~N
+- Inicia o rebase interativo para editar os últimos N commits.
+
+No rebase interativo é possível:
+- reordenar commits;
+- editar commits;
+- remover commits;
+- juntar vários commits (squash).
+
+Observações:
+- O rebase altera o histórico e gera novos hashes para os commits.
+- Evite fazer rebase em commits que já foram compartilhados com outras pessoas.
+- O rebase deixa o histórico mais limpo do que o merge.
