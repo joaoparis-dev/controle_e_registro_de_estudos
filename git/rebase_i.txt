@@ -1,0 +1,51 @@
+# Git Rebase Interativo (git rebase -i)
+
+O git rebase -i (interactive) permite reescrever o histórico de commits de forma controlada.
+É muito utilizado para organizar o histórico antes de enviar alterações para um repositório remoto.
+
+Comando:
+
+git rebase -i HEAD~N
+
+Onde N representa a quantidade de commits que serão editados.
+
+Principais comandos:
+
+pick
+Mantém o commit sem alterações.
+
+reword
+Altera apenas a mensagem do commit.
+
+edit
+Permite alterar o conteúdo de um commit antigo utilizando:
+git commit --amend
+git rebase --continue
+
+squash
+Junta o commit atual com o commit anterior e permite editar a mensagem final.
+
+fixup
+Junta o commit atual com o anterior mantendo automaticamente a mensagem do primeiro commit.
+
+drop
+Remove um commit do histórico.
+
+Comandos úteis durante um rebase:
+
+git rebase --continue
+Continua o rebase após resolver conflitos ou editar um commit.
+
+git rebase --abort
+Cancela o rebase e retorna ao estado anterior.
+
+git rebase --skip
+Ignora o commit que está causando problemas e continua o rebase.
+
+Observações importantes:
+
+- O rebase recria os commits, portanto seus hashes mudam.
+- Alterar a mensagem de um commit também gera um novo hash.
+- Se um commit antigo for modificado, todos os commits posteriores também serão recriados.
+- Durante um rebase podem ocorrer conflitos que devem ser resolvidos antes de continuar.
+- O rebase é indicado para manter um histórico linear e organizado.

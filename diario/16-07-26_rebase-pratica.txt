@@ -1,0 +1,30 @@
+Tempo: 2 horas
+
+Estudei:
+
+- Git Rebase
+- Git Rebase Interativo (git rebase -i)
+
+Aprendi:
+
+- O funcionamento do rebase e como ele reescreve o histórico de commits.
+- Diferenças entre merge e rebase.
+- Como atualizar uma branch utilizando git rebase.
+- O conceito de Fast-Forward após um rebase.
+- Como resolver conflitos durante um rebase utilizando git rebase --continue, --abort e --skip.
+- Como utilizar o git rebase -i para reorganizar o histórico.
+- Utilização dos comandos:
+  - pick
+  - reword
+  - edit
+  - squash
+  - fixup
+  - drop
+
+Dificuldade:
+
+Resolver conflitos durante o rebase e compreender como os commits são recriados após alterações no histórico.
+
+Próximo passo:
+
+Git Cherry-pick.
