@@ -1,0 +1,18 @@
+Tempo: 1 horas
+
+Estudei:
+
+- Pull Request (PR)
+
+Aprendi:
+
+Como funciona o fluxo de Pull Requests no GitHub, a diferença entre PR e git pull, o processo de revisão de código, aprovação e merge,
+além dos tipos de merge disponíveis (Merge Commit, Squash e Rebase).
+
+Dificuldade:
+
+Nenhuma.
+
+Próximo passo:
+
+Git Flow.

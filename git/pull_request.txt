@@ -1,0 +1,87 @@
+# Pull Request (PR)
+
+## O que é?
+
+Um Pull Request (PR) é uma solicitação para que as alterações de uma branch sejam incorporadas em outra (geralmente a `main`).
+
+O PR não faz o merge automaticamente. Ele permite que outras pessoas revisem o código antes da união das branches.
+
+---
+
+## Fluxo de trabalho
+
+1. Criar uma branch.
+2. Desenvolver a funcionalidade.
+3. Fazer commits.
+4. Enviar a branch para o GitHub (`git push`).
+5. Abrir um Pull Request.
+6. Revisão do código.
+7. Aprovação.
+8. Merge.
+9. Excluir a branch.
+
+---
+
+## Comandos
+
+Criar uma branch:
+
+```bash
+git switch -c feature/nova-funcionalidade
+```
+
+Enviar para o GitHub:
+
+```bash
+git push -u origin feature/nova-funcionalidade
+```
+
+Após o push, abrir um Pull Request pelo GitHub.
+
+---
+
+## O que um Pull Request mostra?
+
+- Arquivos alterados
+- Commits realizados
+- Linhas adicionadas e removidas
+- Comentários
+- Revisões
+- Aprovações
+- Resultados de testes (quando configurados)
+
+---
+
+## Tipos de Merge
+
+### Create a Merge Commit
+
+Mantém o histórico das duas branches e cria um commit de merge.
+
+### Squash and Merge
+
+Agrupa todos os commits da branch em um único commit antes do merge.
+
+### Rebase and Merge
+
+Aplica os commits da branch sobre a branch de destino, mantendo um histórico linear.
+
+---
+
+## Pull Request x git pull
+
+**Pull Request (PR):**
+Solicitação para incorporar alterações de uma branch em outra.
+
+**git pull:**
+Baixa e integra as alterações do repositório remoto para o repositório local.
+
+---
+
+## Resumo
+
+- Facilita a revisão de código.
+- Evita alterações diretas na `main`.
+- Organiza a colaboração entre desenvolvedores.
+- Permite comentários e aprovações antes do merge.
+- É o fluxo mais utilizado em equipes de desenvolvimento.
