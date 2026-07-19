@@ -1,0 +1,31 @@
+Tempo: 2 horas e 30 minutos
+
+Estudei:
+
+- Pull Request (PR)
+
+Prática realizada:
+
+- Criei uma branch para desenvolvimento.
+- Adicionei um novo arquivo ao repositório.
+- Realizei o commit das alterações.
+- Enviei a branch para o GitHub com `git push`.
+- Abri um Pull Request comparando a branch com a `main`.
+- Analisei os commits e as alterações propostas pelo PR.
+- Realizei o merge do Pull Request pelo GitHub.
+- Atualizei a `main` local com `git pull`.
+- Analisei o histórico utilizando `git log --oneline --graph --all` para entender como o Git registra um Merge Commit.
+
+Aprendi:
+
+Compreendi o fluxo completo de um Pull Request, desde a criação de uma branch até o merge na `main`.
+Aprendi a diferença entre Pull Request e `git pull`, como o GitHub compara branches,
+como funciona o Merge Commit gerado por um PR e como esse processo é utilizado na colaboração entre desenvolvedores.
+
+Dificuldade:
+
+Nenhuma.
+
+Próximo passo:
+
+Git Flow.
