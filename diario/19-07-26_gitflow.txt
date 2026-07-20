@@ -1,0 +1,26 @@
+Tempo: 2 horas
+
+Estudei:
+
+* Git Flow
+
+Prática realizada:
+
+* Estudei a estrutura do Git Flow.
+* Compreendi a função das branches `main` e `develop`.
+* Aprendi quando utilizar as branches `feature`, `release` e `hotfix`.
+* Analisei o fluxo de desenvolvimento até a publicação em produção.
+* Entendi como as alterações percorrem as branches até chegarem à `main`.
+
+Aprendi:
+
+Compreendi que o Git Flow é um modelo de organização do desenvolvimento utilizando Git.
+Aprendi a função de cada tipo de branch e como elas são utilizadas para desenvolver funcionalidades, preparar versões e corrigir problemas em produção, mantendo o projeto organizado e facilitando o trabalho em equipe.
+
+Dificuldade:
+
+Nenhuma.
+
+Próximo passo:
+
+Cherry-pick.

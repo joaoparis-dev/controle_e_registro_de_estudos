@@ -1,0 +1,49 @@
+Git Flow
+
+Git Flow é um modelo de organização do trabalho com Git que define uma estratégia para o uso de branches durante o desenvolvimento de
+um projeto.
+
+Branches principais
+
+main
+
+* Contém o código em produção.
+* Deve estar sempre estável.
+
+develop
+
+* Contém o código em desenvolvimento.
+* Serve como base para criar novas branches.
+
+Branches auxiliares
+
+feature
+
+* Criada a partir da develop.
+* Utilizada para desenvolver uma nova funcionalidade.
+* Ao terminar, é unida novamente à develop.
+
+release
+
+* Criada para preparar uma nova versão do projeto.
+* Após os testes, é unida à main e à develop.
+
+hotfix
+
+* Criada a partir da main para corrigir problemas urgentes em produção.
+* Depois da correção, é unida à main e à develop.
+
+Fluxo
+
+develop → feature → develop → release → main
+
+Correções urgentes:
+
+main → hotfix → main + develop
+
+Vantagens
+
+* Organização do desenvolvimento.
+* Separação entre desenvolvimento e produção.
+* Facilita o trabalho em equipe.
+* Torna os lançamentos mais seguros.
