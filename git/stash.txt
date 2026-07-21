@@ -1,0 +1,67 @@
+# Git Stash
+
+O `git stash` é utilizado para salvar temporariamente alterações que ainda não foram commitadas
+limpando a área de trabalho para realizar outra tarefa.
+
+## Principais comandos
+
+### Salvar alterações
+
+```bash
+git stash
+```
+
+### Listar stashes salvos
+
+```bash
+git stash list
+```
+
+### Recuperar e remover o stash
+
+```bash
+git stash pop
+```
+
+### Recuperar sem remover
+
+```bash
+git stash apply
+```
+
+### Remover um stash
+
+```bash
+git stash drop stash@{0}
+```
+
+### Remover todos os stashes
+
+```bash
+git stash clear
+```
+
+### Salvar incluindo arquivos não rastreados
+
+```bash
+git stash -u
+```
+
+### Ver o conteúdo de um stash
+
+```bash
+git stash show -p
+```
+
+## Quando usar
+
+* Trocar rapidamente de branch.
+* Corrigir um bug urgente sem fazer commit incompleto.
+* Fazer `pull`, `merge` ou `rebase` com a árvore de trabalho limpa.
+* Pausar uma funcionalidade em desenvolvimento.
+
+## Observações
+
+* O stash é **local** e não é enviado ao GitHub.
+* Não substitui commits.
+* É uma ferramenta para armazenar alterações temporariamente.

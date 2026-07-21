@@ -1,0 +1,17 @@
+Tempo de estudo: 30 minutos
+
+Estudei:
+
+*Git Stash
+
+Aprendi:
+
+Aprendi que o `git stash` permite salvar temporariamente alterações que ainda não foram commitadas
+deixando a árvore de trabalho limpa para realizar outras tarefas. Também entendi como utilizar os principais comandos
+(`git stash`, `git stash list`, `git stash pop`, `git stash apply` e `git stash clear`) e em quais situações o stash é útil no fluxo de
+desenvolvimento.
+
+Dificuldade:
+
+Nenhuma.
+
