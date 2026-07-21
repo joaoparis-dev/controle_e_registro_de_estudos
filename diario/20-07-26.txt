@@ -1,0 +1,19 @@
+Tempo de estudo: 2 horas
+
+estudei:
+
+* Git Cherry-pick
+
+aprendi:
+
+Aprendi que o `git cherry-pick` permite copiar commits específicos de uma branch para outra sem integrar todo o histórico.
+Também entendi que o commit copiado é recriado na branch de destino, recebendo um novo hash. Pratiquei todo o fluxo criando uma branch
+realizando vários commits e copiando apenas um deles para a `main`.
+
+Dificuldade:
+
+Nenhuma.
+
+Próximo passo:
+
+stash

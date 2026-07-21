@@ -1,0 +1,73 @@
+# Diário de Estudos - Cherry-pick
+
+## O que é?
+
+O `git cherry-pick` permite copiar um ou mais commits específicos de uma branch para outra, sem trazer todo o histórico da branch de origem.
+
+Diferente do `merge` e do `rebase`, o `cherry-pick` trabalha apenas com os commits selecionados.
+
+---
+
+## Como funciona
+
+Ao copiar um commit, o Git recria esse commit na branch de destino, gerando um **novo hash**, mesmo mantendo o mesmo conteúdo.
+
+---
+
+## Quando usar
+
+* Aplicar uma correção específica em outra branch.
+* Levar um hotfix para produção.
+* Aproveitar um commit útil de outra branch.
+* Recuperar um commit através do seu hash.
+
+---
+
+## Comandos
+
+Copiar um commit:
+
+```bash
+git cherry-pick HASH
+```
+
+Copiar vários commits:
+
+```bash
+git cherry-pick HASH1 HASH2 HASH3
+```
+
+Copiar um intervalo de commits:
+
+```bash
+git cherry-pick HASH1^..HASH2
+```
+
+Continuar após resolver conflitos:
+
+```bash
+git add .
+git cherry-pick --continue
+```
+
+Cancelar a operação:
+
+```bash
+git cherry-pick --abort
+```
+
+Visualizar os hashes dos commits:
+
+```bash
+git log --oneline
+```
+
+---
+
+## Resumo
+
+* Copia commits específicos entre branches.
+* O commit copiado recebe um novo hash.
+* Não traz todos os commits da branch.
+* Pode gerar conflitos como `merge` e `rebase`.
+* É ideal para aplicar alterações pontuais.
