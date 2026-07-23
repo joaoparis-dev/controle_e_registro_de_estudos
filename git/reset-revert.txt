@@ -1,0 +1,186 @@
+# Git Reset e Git Revert
+
+## O que é `git reset`
+
+O `git reset` é utilizado para mover o ponteiro da branch (HEAD) para um commit anterior, alterando o histórico da branch. 
+Dependendo da opção utilizada, ele também pode modificar a Staging Area e o Working Directory.
+
+É um comando muito útil para corrigir commits locais antes de compartilhar o código.
+
+---
+
+## Tipos de Reset
+
+### `git reset --soft`
+
+Remove o commit, mas mantém todas as alterações na **Staging Area**.
+
+```bash
+git reset --soft HEAD~1
+```
+
+**Quando usar**
+
+* Corrigir a mensagem de um commit.
+* Juntar ou reorganizar commits.
+* Refazer um commit sem perder as alterações.
+
+---
+
+### `git reset --mixed` (padrão)
+
+Remove o commit e limpa a **Staging Area**, mas mantém as alterações nos arquivos.
+
+```bash
+git reset --mixed HEAD~1
+```
+
+ou simplesmente
+
+```bash
+git reset HEAD~1
+```
+
+**Quando usar**
+
+* Reorganizar alterações antes de adicioná-las novamente.
+* Separar um commit em vários commits menores.
+
+---
+
+### `git reset --hard`
+
+Remove o commit, limpa a Staging Area e descarta todas as alterações dos arquivos.
+
+```bash
+git reset --hard HEAD~1
+```
+
+**Quando usar**
+
+* Descartar completamente alterações locais.
+* Voltar exatamente ao estado de um commit anterior.
+
+> Atenção: alterações não commitadas serão perdidas.
+
+---
+
+## Reset para um commit específico
+
+Também é possível voltar para qualquer commit utilizando seu hash.
+
+```bash
+git reset --hard <hash_do_commit>
+```
+
+---
+
+## Recuperando commits com `git reflog`
+
+Mesmo após um reset, normalmente é possível recuperar commits utilizando o histórico do HEAD.
+
+```bash
+git reflog
+```
+
+Depois basta retornar para a referência desejada.
+
+```bash
+git reset --hard HEAD@{1}
+```
+
+O `git reflog` funciona como uma rede de segurança para recuperar alterações perdidas.
+
+---
+
+# O que é `git revert`
+
+Diferente do reset, o `git revert` **não remove commits do histórico**.
+
+Ele cria um novo commit que desfaz as alterações de outro commit.
+
+```bash
+git revert HEAD
+```
+
+Resultado:
+
+```
+A → B → C → Revert C
+```
+
+Todo o histórico permanece preservado.
+
+---
+
+## Revert de um commit específico
+
+Também é possível desfazer qualquer commit utilizando seu hash.
+
+```bash
+git revert <hash_do_commit>
+```
+
+Caso ocorram conflitos, resolva-os normalmente e finalize com:
+
+```bash
+git add .
+git revert --continue
+```
+
+---
+
+# Reset x Revert
+
+| Reset                      | Revert                             |
+| -------------------------- | ---------------------------------- |
+| Move a branch              | Não move a branch                  |
+| Reescreve o histórico      | Preserva o histórico               |
+| Pode apagar commits        | Nunca apaga commits                |
+| Ideal para trabalho local  | Ideal para branches compartilhadas |
+| Pode exigir `push --force` | Não exige reescrita do histórico   |
+
+---
+
+# Quando utilizar
+
+### Use Reset quando
+
+* Ainda não enviou os commits para o GitHub.
+* Precisa reorganizar o histórico.
+* Quer corrigir commits locais.
+* Deseja descartar alterações.
+
+### Use Revert quando
+
+* O commit já foi enviado ao repositório remoto.
+* Está trabalhando em equipe.
+* Precisa desfazer um commit sem alterar o histórico.
+
+---
+
+# Principais comandos
+
+```bash
+git reset --soft HEAD~1
+git reset --mixed HEAD~1
+git reset --hard HEAD~1
+git reset --hard <hash>
+
+git revert HEAD
+git revert <hash>
+
+git reflog
+```
+
+---
+
+# Resumo
+
+* `git reset` altera o histórico da branch.
+* `git reset --soft` remove apenas o commit.
+* `git reset --mixed` remove o commit e limpa a Staging Area.
+* `git reset --hard` remove o commit e descarta as alterações.
+* `git revert` cria um novo commit desfazendo outro commit.
+* `git reflog` permite recuperar commits após um reset.
+* Em projetos compartilhados, prefira utilizar `git revert` em vez de `git reset`.

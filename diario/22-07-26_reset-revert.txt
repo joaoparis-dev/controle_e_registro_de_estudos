@@ -1,0 +1,32 @@
+
+Tempo de estudo: 1 hora
+
+estudei:
+
+* Git Reset (`--soft`, `--mixed` e `--hard`)
+* Git Revert
+* Diferenças entre Reset e Revert
+* Recuperação de commits com `git reflog`
+* Boas práticas para desfazer alterações em projetos locais e compartilhados
+
+## O que aprendi
+
+Aprendi que o `git reset` é utilizado para mover o ponteiro da branch para um commit anterior,
+podendo remover commits e alterar o estado da Staging Area e dos arquivos, dependendo da opção utilizada.
+
+Entendi as diferenças entre `--soft`, `--mixed` e `--hard`, sabendo quando utilizar cada um de forma segura.
+
+Também aprendi que o `git revert` não remove commits do histórico, mas cria um novo commit que desfaz as alterações de outro
+sendo a abordagem recomendada para branches compartilhadas.
+
+Por fim, aprendi a utilizar o `git reflog` para recuperar commits após um reset
+entendendo que ele funciona como uma importante ferramenta de recuperação do histórico.
+
+Dificuldade
+
+Nenhuma.
+
+Próximo passo
+
+Concluir o módulo de Git e GitHub, revisando os principais conceitos estudados antes de iniciar o próximo módulo
+da trilha de desenvolvimento.
