@@ -1,0 +1,19 @@
+Tempo de estudo
+Aproximadamente 2 horas
+
+## O que estudei
+- Big O (Notação O Grande)
+- Complexidade de tempo e espaço
+- Principais complexidades de algoritmos
+- Leitura de aproximadamente 40 páginas do livro **Entendendo Algoritmos**
+
+## O que aprendi
+Aprendi o conceito de Big O e sua importância para analisar a eficiência de algoritmos. Entendi como identificar as principais complexidades, como `O(1)`, `O(log n)`, `O(n)` e `O(n²)`, além das regras para simplificar uma análise de complexidade.
+
+Também avancei na leitura do livro *Entendendo Algoritmos*, reforçando os conceitos estudados e desenvolvendo uma melhor compreensão sobre análise de algoritmos e resolução de problemas.
+
+## Dificuldades
+Nenhuma dificuldade significativa.
+
+## Próximo passo
+Continuar a leitura de *Entendendo Algoritmos* e iniciar o estudo das primeiras estruturas de dados e algoritmos apresentados no livro.
