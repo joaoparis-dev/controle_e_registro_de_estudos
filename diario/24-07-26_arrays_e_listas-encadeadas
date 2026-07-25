@@ -1,0 +1,29 @@
+
+## Tempo de estudo
+
+2 horas
+
+## O que estudei
+
+- Revisão de Big O
+- Leitura de aproximadamente 15 páginas do livro *Entendendo Algoritmos*
+- Arrays
+- Listas Encadeadas
+
+## O que aprendi
+
+Reforcei os conceitos de complexidade de algoritmos (Big O) e iniciei o estudo das primeiras estruturas de dados do livro.
+
+Aprendi que arrays armazenam seus elementos em posições contíguas da memória, permitindo acesso por índice em tempo constante (**O(1)**), mas tornando inserções e remoções no meio mais custosas (**O(n)**).
+
+Também estudei listas encadeadas, entendendo que elas são formadas por nós ligados por referências, permitindo inserções e remoções eficientes quando o nó é conhecido, porém exigindo percorrer a estrutura para acessar elementos específicos.
+
+Além disso, compreendi que a estrutura `list` do Python é implementada como um **array dinâmico**, e não como uma lista encadeada.
+
+## Dificuldades
+
+Nenhuma.
+
+## Próximo passo
+
+Continuar a leitura de *Entendendo Algoritmos* e avançar para as próximas estruturas de dados e algoritmos apresentados no livro.
