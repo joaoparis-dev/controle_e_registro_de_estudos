@@ -1,0 +1,28 @@
+# Diário de Estudos
+
+**Data:** 05/08/2026
+
+## Tempo de estudo
+
+2 horas
+
+## O que estudei
+
+- Views
+- Índices (Indexes)
+- Boas práticas de utilização
+- Otimização de consultas SQL
+
+## O que aprendi
+
+Aprendi que as **Views** são tabelas virtuais criadas a partir de consultas SQL, permitindo reutilizar consultas complexas, organizar melhor o banco de dados e aumentar a segurança ao expor apenas as informações necessárias.
+
+Também aprendi que os **Índices** são estruturas utilizadas para acelerar consultas, funcionando como o índice de um livro. Entendi quando utilizá-los, os diferentes tipos de índices (simples, composto e único) e que, apesar de melhorarem o desempenho das consultas, eles aumentam o custo das operações de inserção, atualização e remoção de dados.
+
+## Dificuldades
+
+Nenhuma.
+
+## Próximo passo
+
+Continuar os estudos em Banco de Dados, aprofundando conceitos como procedures, triggers e transações.
