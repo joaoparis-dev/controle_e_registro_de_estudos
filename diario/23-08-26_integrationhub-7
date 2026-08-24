@@ -1,0 +1,171 @@
+# Diário de Estudos — 23/08/2026
+
+## 📖 Conteúdo estudado
+
+* Organização de schemas no FastAPI
+* Validação de dados com Pydantic
+* Separação de responsabilidades na API
+* Refatoração da estrutura do projeto
+* Routers e Services
+* Regras de negócio para produtos e pedidos
+* Campo `active` para produtos
+* Migrations com Alembic
+
+## 🧠 O que aprendi
+
+Hoje continuei o desenvolvimento da **ERP Integration API**, focando principalmente na organização e melhoria da estrutura do projeto.
+
+Foi feita uma separação maior das responsabilidades da aplicação, mantendo os **routers responsáveis pelas requisições HTTP** e os **services responsáveis pelas regras de negócio**.
+
+Também trabalhamos na organização dos schemas, deixando de concentrar todos eles em um único `schemas.py` para posteriormente separá-los em arquivos individuais dentro de uma pasta `schemas`.
+
+Além disso, foram adicionadas validações aos schemas utilizando recursos do **Pydantic**, tornando a API mais segura e evitando que dados inválidos sejam aceitos.
+
+## 🏗️ Organização da aplicação
+
+A arquitetura ficou baseada principalmente em:
+
+```text
+app/
+├── models/
+├── routers/
+├── services/
+├── schemas/
+├── database.py
+└── main.py
+```
+
+### Routers
+
+Os routers ficaram responsáveis por:
+
+* Receber os dados da requisição.
+* Utilizar os schemas para validação.
+* Obter a sessão do banco através do `Depends(get_db)`.
+* Chamar as funções dos services.
+* Retornar as respostas da API.
+
+Foram organizados routers para:
+
+* Customers
+* Products
+* Orders
+* Order Items
+
+### Services
+
+Os services concentram as regras de negócio.
+
+Foram implementadas operações para:
+
+* Criar clientes, produtos, pedidos e itens.
+* Buscar registros.
+* Listar registros.
+* Atualizar registros.
+* Excluir ou desativar registros.
+* Validar existência de relacionamentos.
+* Controlar estoque.
+* Calcular o total de pedidos.
+
+## 📦 Regras de negócio
+
+Continuamos trabalhando com algumas regras importantes.
+
+### Produtos
+
+Foi adicionado o campo:
+
+```python
+active: bool = True
+```
+
+Isso permite utilizar **soft delete** nos produtos.
+
+Em vez de apagar fisicamente o produto do banco, a API altera:
+
+```text
+active = False
+```
+
+Também foi adicionada uma regra para impedir que produtos inativos sejam adicionados a pedidos.
+
+### Estoque
+
+Os itens de pedido continuam controlando o estoque:
+
+* Ao criar um item, o estoque é reduzido.
+* Ao aumentar a quantidade de um item, o estoque necessário é descontado.
+* Ao diminuir a quantidade, o estoque é devolvido.
+* Ao excluir um item, sua quantidade retorna ao estoque.
+* Ao excluir um pedido, os produtos dos seus itens também têm o estoque restaurado.
+
+### Total do pedido
+
+O cálculo do total ficou separado em uma função específica:
+
+```text
+GET /orders/{order_id}/total
+```
+
+O valor é calculado através da quantidade e do preço unitário de cada item:
+
+```text
+quantidade × preço unitário
+```
+
+## 🗄️ Alembic
+
+Também trabalhamos com migrations para adicionar o campo `active` à tabela `products`.
+
+Inicialmente ocorreu um erro porque a coluna foi criada como `NOT NULL` enquanto já existiam produtos no banco.
+
+O PostgreSQL não poderia colocar `NULL` nessa nova coluna.
+
+A migration precisou considerar os registros existentes, utilizando um valor padrão para que os produtos antigos recebessem:
+
+```text
+active = true
+```
+
+Depois disso, a migration foi aplicada corretamente.
+
+## 🧩 Validação com Pydantic
+
+Os schemas também foram melhorados para validar os dados recebidos pela API.
+
+A ideia é evitar situações como:
+
+* Preço negativo.
+* Estoque negativo.
+* Quantidade de produto menor ou igual a zero.
+* Nome vazio.
+* Dados com tamanho inválido.
+* E-mails inválidos.
+
+Isso faz com que parte da validação aconteça antes mesmo de chegar às regras de negócio dos services.
+
+## 🎯 Resultado do estudo
+
+Ao final do estudo, a API está mais organizada e próxima de uma arquitetura utilizada em projetos reais.
+
+A divisão atual segue a ideia:
+
+```text
+Request
+   ↓
+Router
+   ↓
+Schema / Validação
+   ↓
+Service
+   ↓
+Model / SQLAlchemy
+   ↓
+PostgreSQL
+```
+
+Essa separação facilita a manutenção do projeto e permite que as regras de negócio não fiquem misturadas com o código responsável pelas rotas HTTP.
+
+## 🚀 Próximo passo
+
+Continuar a refatoração dos schemas, finalizar as validações e seguir aprimorando a API antes de iniciar a próxima etapa do backend.
